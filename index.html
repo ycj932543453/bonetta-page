@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Bonetta · 真品认证</title>
+    <style>
+        /* 全局重置：去除边距和滚动条 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* 禁止滚动，保持全屏 */
+            background-color: #0b1a2e; /* 备用背景色（如果图片加载失败） */
+        }
+
+        /* 背景容器：将图片设置为背景 */
+        .bg-wrapper {
+            width: 100%;
+            height: 100%;
+            background-image: url('imageBackground.jpg');
+            background-size: contain;   /* 保持比例，完整显示图片 */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #0b1a2e; /* 图片未填满时的背景色 */
+            
+            /* 兼容性：也支持 cover 模式，但 contain 更能保证完整 */
+            /* 如果想填满并裁剪，可改为 cover，但可能裁掉部分内容 */
+            /* 根据您的需求，这里使用 contain，确保整张图可见 */
+        }
+
+        /* 可选：如果您希望图片拉伸填满（不保持比例），可以改为：
+           background-size: 100% 100%; 
+           但通常不建议，会变形。
+        */
+
+        /* 为了让 HOMEPAGE 可点击，我们可以加一个透明的覆盖按钮，但需要精确坐标。
+           由于无法获取图片内文字位置，这里不加额外元素，仅显示背景图。
+           如果您希望点击 HOMEPAGE 跳转，可自行在对应位置添加绝对定位的链接。
+        */
+
+        /* 也可以添加一个简单的底部水印或版权（可选） */
+        .footer-note {
+            position: fixed;
+            bottom: 10px;
+            right: 20px;
+            color: rgba(255,255,255,0.15);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 1px;
+            pointer-events: none; /* 不干扰点击 */
+            user-select: none;
+            text-shadow: 0 0 8px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 背景层 -->
+    <div class="bg-wrapper"></div>
+
+    <!-- 可选：底部微小版权，不影响视觉 -->
+    <div class="footer-note">Bonetta · Genuine & Trusted</div>
+
+</body>
+</html>
